@@ -4,7 +4,7 @@ function endsWith(string, word) {
     var tree = ''
     for (var i = 0; i < string.length; i++) { 
         for (var j=0; i<word.length; j++) {
-            word === tree[j]
+            word === treeg[j]
         }
 
     }
