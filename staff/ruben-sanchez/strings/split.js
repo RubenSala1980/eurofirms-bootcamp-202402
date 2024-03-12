@@ -17,7 +17,7 @@ function split(string, separator, limit) {
         else {
             stringAcumulator += string[i]
         }
-
+        
             
     }
     console.log(result)
