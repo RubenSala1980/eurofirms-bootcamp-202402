@@ -53,16 +53,10 @@ var users = [
  var pepe = users.filter(function(pe){
     
     if(!pe.name.startsWith('pe'))
-    return pe
-})
- console.log(pepe)
+    return pepe
+return users
+ } ),
+pepe = users
+console.log(users)
 
-var pepe2 =  users.forEach(function(element){
-   var pepe3
-   var counter = 0
-    if(!element.name.startsWith('pe'))
-     pepe3[counter] = element
-    counter++
-    console.log(pepe3)
-})
-console.log(pepe2)
+
