@@ -50,3 +50,19 @@ var users = [
     { id: 'djn5gje', name: 'pinocho', email: 'pin@ocho.com', saved: [] },
 ]
 
+ var pepe = users.filter(function(pe){
+    
+    if(!pe.name.startsWith('pe'))
+    return pe
+})
+ console.log(pepe)
+
+var pepe2 =  users.forEach(function(element){
+   var pepe3
+   var counter = 0
+    if(!element.name.startsWith('pe'))
+     pepe3[counter] = element
+    counter++
+    console.log(pepe3)
+})
+console.log(pepe2)
