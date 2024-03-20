@@ -61,7 +61,7 @@ var pepe = users.reduce(function(acumulator,currentValue){
     
     if(currentValue.name.startsWith('pe')){
         
-        acumulator[acumulator.length] = currentValue
+        acumulator.push(currentValue)
     }
     return acumulator
     
@@ -78,7 +78,7 @@ var users = [
     { id: 'djn5gje', name: 'pinocho', email: 'pin@ocho.com', saved: [] },
 ]
 var nameil = users.reduce(function(acumulator,user){
-        acumulator[acumulator.length] = {name:user.name,email:user.email}
+        acumulator.push({name:user.name,email:user.email})
         
         return acumulator
 },[])
@@ -86,21 +86,22 @@ console.log(nameil)
 // en user3 esta el name como primer valor y surname como segundo del usuario,
 // crea un objeto que contenga esta propiedades
 var user3 = ['peter', 'pan']
-var nameSurname = user3.reduce(function(acumulator,user){
-    if(
-        
-    )
+var nameSurname = user3.reduce(function(acumulator,user,index){
+    if(index === 0){
+        acumulator[index] = {name:user}
+    }else  {
+        acumulator[index] = {surname:user}}
    
     return acumulator
-})
+},[])
 console.log(nameSurname)
 // users4 es un array que contiene arrays, dentro de este segundo array, tenemos el name en primera posicion
 // y el surname en segunda posicion de cada usuario
 // crea un array de objetos, donde cada objecto tenga la propiedad name y surname correspondiente
-
+console.log('array con name y surname')
 var users4 = [['pepito', 'grillo'], ['wendy', 'darling'], ['peter', 'pan']]
 var nameil2 = users4.reduce(function(acumulator,user){
-    acumulator[acumulator.length] = {name:user[0],surname:user[1]}
+    acumulator.push({name:user[0],surname:user[1]})
     
     return acumulator
 },[])
