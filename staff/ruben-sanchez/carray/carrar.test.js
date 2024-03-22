@@ -21,7 +21,9 @@ console.log(c)
 
 console.log('CASE constructs an instance with string elements')
 
+
 var c = new Carray('Ana', 'Adrian', 'Javier', 'Sergio', 'Bernat', 'Maite', 'Sara')
+c.push('Ruben')
 
 console.log(c)
 // Carray { 0: 'Ana', 1: 'Adrian', 2: 'Javier', 3: 'Sergio', 4: 'Bernat', 5: 'Maite', 6: 'Sara', length: 7 }
@@ -59,6 +61,7 @@ c.forEach(function (element) {
 console.log('> find')
 
 console.log('CASE find person with age 20')
+
 
 var people = new Carray(
     { name: 'Peter', age: 30 },
@@ -102,4 +105,32 @@ var namesInUpperCase = names.map(function (name) {
 })
 
 console.log(namesInUpperCase)
-// Carray { 0: 'ANA', 1: 'ADRIAN', 2: 'JAVIER', 3: 'SERGIO', 4: 'BERNAT', 5: 'MAITE', 6: 'SARA', length: 7 }
+// Carray { 0: 'ANA', 1: 'ADRIAN', 2: 'JAVIER', 3: 'SERGIO', 4: 'BERNAT', 5: 'MAITE', 6: 'SARA', length: 7 }ciudades.filter(function(){
+
+// TODO add push cases
+
+console.log('> filter')
+
+console.log('CASE filter cities that start with Le')
+
+var ciudades = new Carray('Berlin', 'Tokio', 'Granollers', 'Leon', 'Madrid')
+
+var leCities = ciudades.filter(function (ciudad) {
+    return ciudad.startsWith('Le')
+})
+
+console.log(leCities)
+// {0: 'Leon'}
+
+console.log('> every')
+
+console.log('CASE check if every element on the array are higher that 31')
+
+var numbers = new Carray(12, 30, 40, 22, 60, 30, 31)
+
+var areAllNumbersHigherThan11 = numbers.every(function (element) {
+    return element > 11
+})
+
+console.log(areAllNumbersHigherThan11)
+// true
