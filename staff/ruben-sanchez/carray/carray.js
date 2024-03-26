@@ -53,6 +53,24 @@ Carray.prototype.push = function () {
 
     return this.length
 }
+Carray.prototype.unshift = function () {
+   var newLength = this.length +arguments.length
+
+    for (var i= newLength-1; i >= arguments.length;i--) {
+        this[i] = this[i-arguments.length]
+    }
+
+    for (var j= 0; j < arguments.length;j++) {
+        this[j] = arguments[j]
+    }
+
+     this.length = newLength
+
+     return this.length
+
+
+
+}
 
 Carray.prototype.filter = function (callback) {
    var result = new Carray()
