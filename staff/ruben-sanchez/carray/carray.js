@@ -97,4 +97,26 @@ Carray.prototype.every = function (callback) {
     return true
 }
 
+
+Carray.prototype.shift=function(){
+    
+    var deletedElement = this[0]
+    for(var i=0; i < this.length-1;i++){
+        this[i]=this[i+1]
+    }
+    this.length--
+
+    delete this[this.length]
+    return deletedElement
+}
+Carray.prototype.pop = function(){
+    var deletedElement = this[this.length]
+
+    for
+
+
+}
+
+
 module.exports = Carray
+
