@@ -1,39 +1,38 @@
-function GuessForm() {
-    Form.call(this)
+class GuessForm extends Form {
+    constructor() {
+        super()
 
-    this.setStyle('display','flex')
-    this.setStyle('gap','10px')
+        this.setStyle('display','flex')
+        this.setStyle('gap','10px')
 
-    var label = new label
-    label.setFor('guessInput')
-    label.setText('Type a letter')
-    this.add(label)
+        const charLabel = new Label
+        charLabel.setFor('char')
+        charLabel.setText('character')
+        this.add(charLabel)
 
-    var charInput = new Input
-    charInput.setId('guessInput')
-    charInput.setStyle('maxWidth','20px')
-    charInput.container.maxLength = '1'
-    this.add(charInput)
+        const charInput = new Input
+        charInput.setId('char')
+        charInput.setMaxLength(1)
+        charInput.setStyle('width','20px')
+        this.add(charInput)
 
-    this.charInput = charInput
+        this.charInput = charInput
 
-    var button = new Button 
-    button.setType('submit')
-    button.setText('Send')
-    this.add(button)
+        const guessButton = new Button
+        guessButton.setType('submit')
+        guessButton.setText('Guess')
+        this.add(guessButton)
+    }
 
-}
+    onSubmit(callback) {
+        super.onSubmit(event =>{
+            event.preventDefault()
 
-GuessForm.prototype = Object.create(Form.prototype)
-GuessForm.prototype.constructor = GuessForm
+            const char = this.charInput.getValue()
 
-GuessForm.prototype.onSubmit = function (callback) {
-    this.container.onsubmit = function (event) {
-        event.preventDefault()
+            this.reset()
 
-        var char = this.charInput.getValue()
-
-        callback(char)
-
-    }.bind(this)
+            callback(char)
+        })
+    }
 }
