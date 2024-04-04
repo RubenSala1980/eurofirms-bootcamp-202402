@@ -1,0 +1,24 @@
+.board{
+    display: grid;
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+    gap: 1px;
+}
+
+.clicked-cell{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-clicked-cell{
+    background-color: gray;
+}
+
+.cell-button{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
