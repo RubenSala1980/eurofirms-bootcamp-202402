@@ -2,23 +2,23 @@ class App extends React.Component {
   constructor() { //aqui comienza el constructor
     super();
 
-    const board = new Array(4);
+    const board = new Array(10);
 
     for (let i = 0; i < board.length; i++)
-      board[i] = new Array(board.length).fill('red');
+      board[i] = new Array(board.length).fill('yellow');
 
     this.state = {
       board,
-      changeColor: 'red'
+      changeColor: 'pink'
     }
-    ;
+    this.changeColor = this.changeColor.bind(this);
   } // aqui acaba el constructor
 
  
 
   play(row, column) {
     const changeColor = this.state.changeColor
-    const board = state.board.map(row=>[...row])
+    const board = this.state.board.map(row=>[...row])
     
     console.log("click");
     board[row][column] = changeColor
@@ -26,7 +26,8 @@ class App extends React.Component {
 
   }
   changeColor(color){
-    this.setState({changeColor:color})}
+    this.setState({changeColor:color});
+  }
 
   render(){
     const board = this.state.board
@@ -38,7 +39,13 @@ class App extends React.Component {
                 gridTemplateColumns: `repeat(${board.length}, 1fr)`,
                 gridTemplateRows: `repeat(${board.length}, 1fr)`
             }}>
-                {board.map((row,i)=> row.map((color,j)=><div={`${i}-${j}`}  className="cell" onClick={() => this.play(i, j)}style={{backgroundColor:color}}/>)).flat()} />
+               {board.map((row, i) => row.map((color, j) =>
+                            <div
+                                key={`${i}-${j}`}
+                                className="cell"
+                                onClick={() => this.play(i, j)}
+                                style={{ backgroundColor: color }}
+                            /> )).flat()}
             </section>
           
         </main>
